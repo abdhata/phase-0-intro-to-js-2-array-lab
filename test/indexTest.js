@@ -1,19 +1,19 @@
 describe('index.js', function () {
-  describe('cats', function () {
+  describe('cats', function (cats = ["Milo", "Otis", "Garfield"]) {
     it('is assigned an initial value of ["Milo", "Otis", "Garfield"]', function () {
       expect(cats).to.have.ordered.members(["Milo", "Otis", "Garfield"]);
     });
   });
 
-  describe('Array functions', function () {
+  describe('Array functions', function (cats = ["Milo", "Otis", "Garfield"]) {
     beforeEach(function () {
       cats.length = 0;
 
       cats.push('Milo', 'Otis', 'Garfield');
     });
 
-    describe('destructivelyAppendCat(name)', function () {
-      it('appends a cat to the end of the cats array', function () {
+    describe('destructivelyAppendCat(name)', function (cats) {
+      it('appends a cat to the end of the cats array', function (cats) {
         destructivelyAppendCat('Ralph');
 
         expect(cats).to.have.ordered.members(["Milo", "Otis", "Garfield", "Ralph"]);
